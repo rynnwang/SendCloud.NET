@@ -8,6 +8,9 @@ using Newtonsoft.Json.Linq;
 
 namespace Beyova.SendCloud.SDK
 {
+    /// <summary>
+    /// Class SendCloudClient.
+    /// </summary>
     partial class SendCloudClient
     {
         #region Template
