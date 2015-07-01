@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Beyova.SendCloud.SDK")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("EF")]
+[assembly: AssemblyCompany("Beyova Co.,Ltd.")]
 [assembly: AssemblyProduct("Beyova.SendCloud.SDK")]
 [assembly: AssemblyCopyright("Copyright © Beyova 2015")]
 [assembly: AssemblyTrademark("")]
