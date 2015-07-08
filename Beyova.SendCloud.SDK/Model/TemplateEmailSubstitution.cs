@@ -24,9 +24,25 @@ namespace Beyova.SendCloud.SDK.Model
         /// Gets or sets the substitution.
         /// </summary>
         /// <value>The substitution.</value>
-        [JsonProperty("sub")]
+        [JsonIgnore]
         public Dictionary<string, List<string>> Substitution { get; set; }
 
+        /// <summary>
+        /// Gets or sets the substitution output.
+        /// </summary>
+        /// <value>The substitution output.</value>
+        [JsonProperty("sub")]
+        public Dictionary<string, List<string>> SubstitutionOutput
+        {
+            get
+            {
+                return Substitution == null ? null : Substitution.ToDictionary(one => ToPlaceholder(one.Key), one => one.Value);
+            }
+            set
+            {
+                //do nothing
+            }
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="TemplateEmailSubstitution" /> class.
         /// </summary>
@@ -41,7 +57,7 @@ namespace Beyova.SendCloud.SDK.Model
             {
                 foreach (var one in placeholders)
                 {
-                    this.Substitution.Add(ToPlaceholder(one), new List<string>());
+                    this.Substitution.Add(one, new List<string>());
                 }
             }
         }

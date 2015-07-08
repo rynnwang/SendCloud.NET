@@ -26,12 +26,11 @@ namespace Beyova.SendCloud.SDK
         /// <param name="label">The label.</param>
         /// <param name="usingGZip">if set to <c>true</c> [using g zip].</param>
         /// <returns>List&lt;System.String&gt;.</returns>
-        public List<string> SendMail(MailAddress from, MailAddress to, string templateName, Dictionary<string, string> replacements, string replyTo, Dictionary<string, string> headers, string files, string smtpApi, int? label = null, bool usingGZip = false)
+        public List<string> SendMail(MailAddress from, MailAddress to, string templateName, Dictionary<string, string> replacements, string replyTo = null, Dictionary<string, string> headers = null, string files = null, string smtpApi = null, int? label = null, bool usingGZip = false)
         {
             try
             {
                 var substitution = new TemplateEmailSubstitution(replacements.Keys.ToList());
-                substitution.To.Add(to.Address);
                 substitution.Add(to.Address, replacements);
 
                 return SendMail(from, templateName, substitution, replyTo, headers, files, smtpApi, label, usingGZip);
@@ -74,9 +73,9 @@ namespace Beyova.SendCloud.SDK
                 {
                     {"from", @from.Address},
                     {"template_invoke_name", templateName},
-                    {"substitution_vars", substitution.ToJson()}
+                    {"substitution_vars", substitution.ToJson(false).ToUrlEncodedText()}
                 };
-                
+
                 if (!string.IsNullOrWhiteSpace(from.DisplayName))
                 {
                     parameters.Add("fromname", from.DisplayName);
@@ -113,7 +112,7 @@ namespace Beyova.SendCloud.SDK
                 #endregion
 
                 var response = Invoke(module, action, HttpConstants.HttpMethod.Post, parameters, responsePropertyName);
-                return response.Value<List<string>>();
+                return response.ToObject<List<string>>();
             }
             catch (Exception ex)
             {
