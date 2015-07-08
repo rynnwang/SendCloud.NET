@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\TemplateEmailSubstitution.cs" />
+    <Compile Include="Model\ServiceType.cs" />
     <Compile Include="Model\Template\EmailTemplateCriteria.cs" />
     <Compile Include="Model\Template\EmailTemplate.cs" />
     <Compile Include="SendCloudClient\Template.cs" />
