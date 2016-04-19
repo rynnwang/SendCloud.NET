@@ -1,18 +1,20 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Beyova.ProgrammingIntelligence;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Beyova.SendCloud.SDK")]
-[assembly: AssemblyDescription("0.4.0")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Beyova Co.,Ltd.")]
 [assembly: AssemblyProduct("Beyova.SendCloud.SDK")]
-[assembly: AssemblyCopyright("Copyright © Beyova 2015")]
+[assembly: AssemblyDescription("All Rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
+[assembly: BeyovaComponent("Beyova.SendCloud", "0.5.0")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 

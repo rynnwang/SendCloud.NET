@@ -37,7 +37,7 @@ namespace Beyova.SendCloud.SDK
             }
             catch (Exception ex)
             {
-                throw ex.Handle("SendMail", new
+                throw ex.Handle(new
                 {
                     from = from.Address,
                     to = to != null ? to.Address : null
@@ -116,7 +116,7 @@ namespace Beyova.SendCloud.SDK
             }
             catch (Exception ex)
             {
-                throw ex.Handle("SendMail", new
+                throw ex.Handle(new
                 {
                     from = from.Address,
                     substitution = substitution

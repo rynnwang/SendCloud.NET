@@ -89,7 +89,6 @@ namespace Beyova.SendCloud.SDK
         /// <param name="parameters">The parameters.</param>
         /// <param name="responsePropertyName">Name of the response property.</param>
         /// <returns>JToken.</returns>
-        /// <exception cref="ifunction.ExceptionSystem.RemoteServiceOperationFailureException">SendCloud;SendCloud.Sohu.com;null;null</exception>
         protected JToken Invoke(string module, string action, string httpMethod, Dictionary<string, string> parameters, string responsePropertyName)
         {
             var httpRequest = GetHttpRequest(module, action, httpMethod, parameters);
@@ -105,7 +104,7 @@ namespace Beyova.SendCloud.SDK
             }
             else
             {
-                throw new RemoteServiceOperationFailureException("SendCloud", "SendCloud.Sohu.com", string.Format("{0}.{1}", module, action), null, null, responseObject.GetValue("errors").SafeToString());
+                throw new OperationFailureException(data: new { uri = httpRequest.RequestUri.ToString(), response });
             }
         }
 

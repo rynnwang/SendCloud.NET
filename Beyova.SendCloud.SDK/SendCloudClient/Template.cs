@@ -49,7 +49,7 @@ namespace Beyova.SendCloud.SDK
             }
             catch (Exception ex)
             {
-                throw ex.Handle("QueryTemplates", criteria);
+                throw ex.Handle(criteria);
             }
         }
 
@@ -86,7 +86,7 @@ namespace Beyova.SendCloud.SDK
             }
             catch (Exception ex)
             {
-                throw ex.Handle("AddTemplate", template);
+                throw ex.Handle(template);
             }
         }
 
