@@ -14,7 +14,7 @@ using Beyova.ProgrammingIntelligence;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: BeyovaComponent("Beyova.SendCloud", "0.5.2")]
+[assembly: BeyovaComponent("Beyova.SendCloud", "0.5.3")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
